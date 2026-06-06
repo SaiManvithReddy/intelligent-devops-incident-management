@@ -1,6 +1,6 @@
 # Multi-stage build for the React dashboard: build static assets, then serve
 # them with a lightweight static file server.
-FROM node:20-alpine AS build
+FROM node:18-alpine AS build
 
 WORKDIR /app
 
