@@ -2,6 +2,11 @@
 # them with a lightweight static file server.
 FROM node:18-alpine AS build
 
+# Build-time variable so CRA bakes the correct API URL into the JS bundle.
+# Pass via docker-compose build.args or `docker build --build-arg ...`.
+ARG REACT_APP_API_BASE_URL=http://localhost:8080
+ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
+
 WORKDIR /app
 
 COPY src/dashboard/package.json ./
