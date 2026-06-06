@@ -1,0 +1,9 @@
+{
+  "short_name": "Incident Dashboard",
+  "name": "Intelligent DevOps Incident Management Dashboard",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0f172a",
+  "background_color": "#0b1120"
+}
