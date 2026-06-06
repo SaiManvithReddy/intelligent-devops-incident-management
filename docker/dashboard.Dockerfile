@@ -5,7 +5,11 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 COPY src/dashboard/package.json ./
-RUN npm install --legacy-peer-deps
+# react-scripts 5 pulls ajv-keywords@5 which requires ajv@8, but react-scripts
+# itself ships ajv@6. Installing ajv@8 explicitly hoists it into the top-level
+# node_modules so ajv-keywords can resolve `ajv/dist/compile/codegen`.
+RUN npm install --legacy-peer-deps && \
+    npm install ajv@^8.0.0 --legacy-peer-deps
 
 COPY src/dashboard/ ./
 RUN npm run build

@@ -4,6 +4,7 @@
   "private": true,
   "description": "React dashboard for the Intelligent DevOps Incident Management System - real-time incident feed, severity breakdown chart, and MTTR metrics.",
   "dependencies": {
+    "ajv": "^8.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
